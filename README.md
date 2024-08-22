@@ -1,16 +1,6 @@
 # Auto-SQL-Correction
 Code, data, and model for our ACL 2023 paper [Text-to-SQL Error Correction with Language Models of Code](https://arxiv.org/abs/2305.13073).
 
-
-**Note:**
-Although the raw codes for all experiments are released, we are actively cleaning and reorganizing the repository, so some temporary issues may occur till we finalize it. Please check the following TODO list for our progress: 
-
-#### TODO
-- [x] Data and model
-- [x] Code for `CodeT5-PyDict+Program`
-- [ ] Code for simulated interaction
-- [ ] Code for other experiments
-
 ## Table of Contents
 
 1. Installation
@@ -52,20 +42,17 @@ The `data/` folder should be organized as follows:
 ```
 
 ## Preprocessing
-TODO
 ```sh
 python run.py --preproc --use_content --query_type pydict --edit_type program --base_parser smbop
 ```
 
 ## Training
-TODO
 ```sh
 mkdir model
 python run.py --train --load_checkpoint Salesforce/codet5-base --save_checkpoint model/codet5-sqledit --seed 42 --gpu 0
 ```
 
 ## Evaluation
-TODO
 ```sh
 python run.py --eval --load_checkpoint model/codet5-sqledit --gpu 0
 ```

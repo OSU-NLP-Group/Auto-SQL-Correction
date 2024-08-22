@@ -78,7 +78,6 @@ def add_preproc_args(parser):
         "--base_parser", type=str, 
         default="codet5"
     )
-    
     return parser
 
 
@@ -130,6 +129,7 @@ def set_seed(seed):
     torch.manual_seed(seed)
     random.seed(seed)
     np.random.seed(seed)
+    torch.cuda.manual_seed_all(seed)
 
 
 if __name__ == "__main__":
